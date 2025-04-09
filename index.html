@@ -285,6 +285,67 @@
   <td><code>String[] words = s.split(" "); if(words.length != pattern.length()) return false; Map&lt;Character,String&gt; map=new HashMap&lt;&gt;(); Map&lt;String,Character&gt; map2=new HashMap&lt;&gt;(); for(int i=0;i&lt;pattern.length();i++){ char c=pattern.charAt(i); String w=words[i]; if(map.containsKey(c)){ if(!map.get(c).equals(w)) return false; } else { if(map2.containsKey(w)) return false; map.put(c,w); map2.put(w,c); } }</code></td>
 </tr>
 <!-- more to come -->
+<tr>
+  <td>Valid Parentheses</td>
+  <td><a href="https://leetcode.com/problems/valid-parentheses" target="_blank">Link</a></td>
+  <td>Stack</td>
+  <td><code>Stack&lt;Character&gt; st=new Stack&lt;&gt;(); for(char c: s.toCharArray()){ if(c=='('||c=='{'||c=='[') st.push(c); else if(st.isEmpty() || Math.abs(c - st.pop()) &gt; 2) return false; } return st.isEmpty();</code></td>
+</tr>
+<tr>
+  <td>Simplify Path</td>
+  <td><a href="https://leetcode.com/problems/simplify-path" target="_blank">Link</a></td>
+  <td>Stack (split and process components)</td>
+  <td><code>Stack&lt;String&gt; st=new Stack&lt;&gt;(); for(String dir: path.split("/")){ if(dir.equals("..")){ if(!st.isEmpty()) st.pop(); } else if(dir.length()&gt;0 &amp;&amp; !dir.equals(".")) st.push(dir); } return "/" + String.join("/", st);</code></td>
+</tr>
+<tr>
+  <td>Min Stack</td>
+  <td><a href="https://leetcode.com/problems/min-stack" target="_blank">Link</a></td>
+  <td>Stack (track min value)</td>
+  <td><code>Stack&lt;int[]&gt; st=new Stack&lt;&gt;(); public void push(int x){ if(st.isEmpty()) st.push(new int[]{x,x}); else st.push(new int[]{x, Math.min(x, st.peek()[1])}); } public void pop(){ st.pop(); } public int top(){ return st.peek()[0]; } public int getMin(){ return st.peek()[1]; }</code></td>
+</tr>
+<tr>
+  <td>Evaluate Reverse Polish Notation</td>
+  <td><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation" target="_blank">Link</a></td>
+  <td>Stack (evaluate expression)</td>
+  <td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); for(String tok: tokens){ if(tok.equals("+")||tok.equals("-")||tok.equals("*")||tok.equals("/")){ int b=st.pop(), a=st.pop(); if(tok.equals("+")) st.push(a+b); if(tok.equals("-")) st.push(a-b); if(tok.equals("*")) st.push(a*b); if(tok.equals("/")) st.push(a/b); } else st.push(Integer.valueOf(tok)); } return st.pop();</code></td>
+</tr>
+<tr>
+  <td>Basic Calculator</td>
+  <td><a href="https://leetcode.com/problems/basic-calculator" target="_blank">Link</a></td>
+  <td>Stack (evaluate with sign and parentheses)</td>
+  <td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); int result=0, sign=1; for(char c: s.toCharArray()){ if(Character.isDigit(c)){ int num=c - '0'; while(i+1&lt;s.length() &amp;&amp; Character.isDigit(s.charAt(i+1))){ num = num*10 + (s.charAt(++i)-'0'); } result += sign * num; } else if(c=='+') sign=1; else if(c=='-') sign=-1; else if(c=='('){ st.push(result); st.push(sign); result=0; sign=1; } else if(c==')'){ result = result * st.pop() + st.pop(); } } return result;</code></td>
+</tr>
+<!-- Next batch incoming... -->
+<tr>
+  <td>Valid Parentheses</td>
+  <td><a href="https://leetcode.com/problems/valid-parentheses" target="_blank">Link</a></td>
+  <td>Stack</td>
+  <td><code>Stack&lt;Character&gt; st=new Stack&lt;&gt;(); for(char c: s.toCharArray()){ if(c=='('||c=='{'||c=='[') st.push(c); else if(st.isEmpty() || Math.abs(c - st.pop()) &gt; 2) return false; } return st.isEmpty();</code></td>
+</tr>
+<tr>
+  <td>Simplify Path</td>
+  <td><a href="https://leetcode.com/problems/simplify-path" target="_blank">Link</a></td>
+  <td>Stack (split and process components)</td>
+  <td><code>Stack&lt;String&gt; st=new Stack&lt;&gt;(); for(String dir: path.split("/")){ if(dir.equals("..")){ if(!st.isEmpty()) st.pop(); } else if(dir.length()&gt;0 &amp;&amp; !dir.equals(".")) st.push(dir); } return "/" + String.join("/", st);</code></td>
+</tr>
+<tr>
+  <td>Min Stack</td>
+  <td><a href="https://leetcode.com/problems/min-stack" target="_blank">Link</a></td>
+  <td>Stack (track min value)</td>
+  <td><code>Stack&lt;int[]&gt; st=new Stack&lt;&gt;(); public void push(int x){ if(st.isEmpty()) st.push(new int[]{x,x}); else st.push(new int[]{x, Math.min(x, st.peek()[1])}); } public void pop(){ st.pop(); } public int top(){ return st.peek()[0]; } public int getMin(){ return st.peek()[1]; }</code></td>
+</tr>
+<tr>
+  <td>Evaluate Reverse Polish Notation</td>
+  <td><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation" target="_blank">Link</a></td>
+  <td>Stack (evaluate expression)</td>
+  <td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); for(String tok: tokens){ if(tok.equals("+")||tok.equals("-")||tok.equals("*")||tok.equals("/")){ int b=st.pop(), a=st.pop(); if(tok.equals("+")) st.push(a+b); if(tok.equals("-")) st.push(a-b); if(tok.equals("*")) st.push(a*b); if(tok.equals("/")) st.push(a/b); } else st.push(Integer.valueOf(tok)); } return st.pop();</code></td>
+</tr>
+<tr>
+  <td>Basic Calculator</td>
+  <td><a href="https://leetcode.com/problems/basic-calculator" target="_blank">Link</a></td>
+  <td>Stack (evaluate with sign and parentheses)</td>
+  <td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); int result=0, sign=1; for(char c: s.toCharArray()){ if(Character.isDigit(c)){ int num=c - '0'; while(i+1&lt;s.length() &amp;&amp; Character.isDigit(s.charAt(i+1))){ num = num*10 + (s.charAt(++i)-'0'); } result += sign * num; } else if(c=='+') sign=1; else if(c=='-') sign=-1; else if(c=='('){ st.push(result); st.push(sign); result=0; sign=1; } else if(c==')'){ result = result * st.pop() + st.pop(); } } return result;</code></td>
+</tr>
 <!-- continuing... -->
 <tr>
   <td>Valid Anagram</td>
@@ -351,4 +412,4 @@
     </tbody>
   </table>
 </body>
-</html>
+  </html>
