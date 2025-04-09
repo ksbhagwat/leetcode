@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LeetCode Top 150 Summary</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LeetCode Top 150 Summary</title>
+<style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
@@ -32,384 +33,391 @@
   </style>
 </head>
 <body>
-  <h1>LeetCode Top 150 Interview Questions Summary</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Question Title</th>
-        <th>Problem Link</th>
-        <th>Core Solving Technique</th>
-        <th>Java Snippet (Core Logic)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- FULL DATA START -->
+<h1>LeetCode Top 150 Interview Questions Summary</h1>
+<table>
+<thead>
 <tr>
-  <td>Merge Sorted Array</td>
-  <td><a href="https://leetcode.com/problems/merge-sorted-array" target="_blank">Link</a></td>
-  <td>Two Pointers (merge from end)</td>
-  <td><code>int i=m-1,j=n-1,k=m+n-1; while(j&gt;=0) nums1[k--] = (i&gt;=0 &amp;&amp; nums1[i]&gt;nums2[j]) ? nums1[i--] : nums2[j--];</code></td>
+<th>#</th>
+<th>Question Title</th>
+<th>Problem Link</th>
+<th>Core Solving Technique</th>
+<th>Java Snippet (Core Logic)</th>
 </tr>
+</thead>
+<tbody>
+<!-- Automatically add serial numbers using JavaScript later or generate manually -->
+<!-- FULL DATA START -->
 <tr>
-  <td>Remove Element</td>
-  <td><a href="https://leetcode.com/problems/remove-element" target="_blank">Link</a></td>
-  <td>Two Pointers (in-place overwrite)</td>
-  <td><code>int k=0; for(int x: nums) if(x != val) nums[k++] = x;</code></td>
+<td>1</td>
+<td>Merge Sorted Array</td>
+<td><a href="https://leetcode.com/problems/merge-sorted-array" target="_blank">Link</a></td>
+<td>Two Pointers (merge from end)</td>
+<td><code>int i=m-1,j=n-1,k=m+n-1; while(j&gt;=0) nums1[k--] = (i&gt;=0 &amp;&amp; nums1[i]&gt;nums2[j]) ? nums1[i--] : nums2[j--];</code></td>
 </tr>
 <tr>
-  <td>Remove Duplicates from Sorted Array</td>
-  <td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array" target="_blank">Link</a></td>
-  <td>Two Pointers (slow/fast)</td>
-  <td><code>int k=1; for(int i=1;i&lt;nums.length;i++) if(nums[i]!=nums[k-1]) nums[k++] = nums[i];</code></td>
+<td>2</td>
+<td>Remove Element</td>
+<td><a href="https://leetcode.com/problems/remove-element" target="_blank">Link</a></td>
+<td>Two Pointers (in-place overwrite)</td>
+<td><code>int k=0; for(int x: nums) if(x != val) nums[k++] = x;</code></td>
 </tr>
 <tr>
-  <td>Remove Duplicates from Sorted Array II</td>
-  <td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii" target="_blank">Link</a></td>
-  <td>Two Pointers (allow twice)</td>
-  <td><code>int k=0; for(int x: nums){ if(k&lt;2 || x != nums[k-2]) nums[k++] = x; }</code></td>
+<td>3</td>
+<td>Remove Duplicates from Sorted Array</td>
+<td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array" target="_blank">Link</a></td>
+<td>Two Pointers (slow/fast)</td>
+<td><code>int k=1; for(int i=1;i&lt;nums.length;i++) if(nums[i]!=nums[k-1]) nums[k++] = nums[i];</code></td>
 </tr>
 <tr>
-  <td>Majority Element</td>
-  <td><a href="https://leetcode.com/problems/majority-element" target="_blank">Link</a></td>
-  <td>Boyer-Moore Voting algorithm</td>
-  <td><code>int count=0, candidate=0; for(int num: nums){ if(count==0) candidate=num; count += (num==candidate ? 1 : -1); }</code></td>
+<td>4</td>
+<td>Remove Duplicates from Sorted Array II</td>
+<td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii" target="_blank">Link</a></td>
+<td>Two Pointers (allow twice)</td>
+<td><code>int k=0; for(int x: nums){ if(k&lt;2 || x != nums[k-2]) nums[k++] = x; }</code></td>
 </tr>
 <tr>
-  <td>Rotate Array</td>
-  <td><a href="https://leetcode.com/problems/rotate-array" target="_blank">Link</a></td>
-  <td>Array Manipulation (reverse / extra array)</td>
-  <td><code>int[] tmp = nums.clone(); for(int i=0;i&lt;n;i++){ nums[(i+k)%n] = tmp[i]; }</code></td>
+<td>5</td>
+<td>Majority Element</td>
+<td><a href="https://leetcode.com/problems/majority-element" target="_blank">Link</a></td>
+<td>Boyer-Moore Voting algorithm</td>
+<td><code>int count=0, candidate=0; for(int num: nums){ if(count==0) candidate=num; count += (num==candidate ? 1 : -1); }</code></td>
+</tr><tr>
+<td>6</td>
+<td>Rotate Array</td>
+<td><a href="https://leetcode.com/problems/rotate-array" target="_blank">Link</a></td>
+<td>Array Manipulation (reverse / extra array)</td>
+<td><code>int[] tmp = nums.clone(); for(int i=0;i&lt;n;i++){ nums[(i+k)%n] = tmp[i]; }</code></td>
+</tr><tr>
+<td>7</td>
+<td>Best Time to Buy and Sell Stock</td>
+<td><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock" target="_blank">Link</a></td>
+<td>One-pass (track min price)</td>
+<td><code>int min=Integer.MAX_VALUE, profit=0; for(int price: prices){ min=Math.min(min,price); profit=Math.max(profit, price-min); }</code></td>
+</tr><tr>
+<td>8</td>
+<td>Best Time to Buy and Sell Stock II</td>
+<td><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii" target="_blank">Link</a></td>
+<td>Greedy (take all positive differences)</td>
+<td><code>int profit=0; for(int i=1;i&lt;prices.length;i++){ if(prices[i]&gt;prices[i-1]) profit += prices[i]-prices[i-1]; }</code></td>
+</tr><tr>
+<td>9</td>
+<td>Jump Game</td>
+<td><a href="https://leetcode.com/problems/jump-game" target="_blank">Link</a></td>
+<td>Greedy (track furthest reach)</td>
+<td><code>int reach=0; for(int i=0;i&lt;nums.length &amp;&amp; i&lt;=reach; i++){ reach = Math.max(reach, i+nums[i]); }</code></td>
+</tr><tr>
+<td>10</td>
+<td>Jump Game II</td>
+<td><a href="https://leetcode.com/problems/jump-game-ii" target="_blank">Link</a></td>
+<td>Greedy (farthest reach in current range)</td>
+<td><code>int jumps=0, end=0, far=0; for(int i=0;i&lt;nums.length-1;i++){ far=Math.max(far,i+nums[i]); if(i==end){ jumps++; end=far; } }</code></td>
+</tr><tr>
+<td>11</td>
+<td>H-Index</td>
+<td><a href="https://leetcode.com/problems/h-index" target="_blank">Link</a></td>
+<td>Sorting (then find break point)</td>
+<td><code>Arrays.sort(citations); int n=citations.length; for(int i=0;i<n;i++){ if(citations[i]="">=n-i) return n-i; } return 0;</n;i++){></code></td>
+</tr><tr>
+<td>12</td>
+<td>Insert Delete GetRandom O(1)</td>
+<td><a href="https://leetcode.com/problems/insert-delete-getrandom-o1" target="_blank">Link</a></td>
+<td>HashMap + ArrayList (amortized O(1))</td>
+<td><code>int idx = map.get(val); int last = list.get(list.size()-1); list.set(idx, last); map.put(last, idx); list.remove(list.size()-1); map.remove(val);</code></td>
+</tr><tr>
+<td>13</td>
+<td>Product of Array Except Self</td>
+<td><a href="https://leetcode.com/problems/product-of-array-except-self" target="_blank">Link</a></td>
+<td>Prefix &amp; Suffix products (two-pass)</td>
+<td><code>int[] res=new int[n]; res[0]=1; for(int i=1;i<n;i++){ for(int="" i="" r="1;" res[i]="res[i-1]*nums[i-1];" }="">=0; i--){ res[i]*=R; R *= nums[i]; }</n;i++){></code></td>
+</tr><tr>
+<td>14</td>
+<td>Gas Station</td>
+<td><a href="https://leetcode.com/problems/gas-station" target="_blank">Link</a></td>
+<td>Greedy (single pass)</td>
+<td><code>int start=0, tank=0, total=0; for(int i=0;i<n;i++){ +="gain;" gain="gas[i]-cost[i];" if(tank<0){="" int="" return="" start="i+1;" tank="0;" total="" }="">=0? start: -1;</n;i++){></code></td>
+</tr><tr>
+<td>15</td>
+<td>Candy</td>
+<td><a href="https://leetcode.com/problems/candy" target="_blank">Link</a></td>
+<td>Greedy (two-pass)</td>
+<td><code>int[] candy = new int[n]; Arrays.fill(candy,1); for(int i=1;i<n;i++){ if(rating[i]="">rating[i-1]) candy[i]=candy[i-1]+1; } for(int i=n-2;i&gt;=0;i--){ if(rating[i]&gt;rating[i+1]) candy[i] = Math.max(candy[i], candy[i+1]+1); }</n;i++){></code></td>
+</tr><tr>
+<td>16</td>
+<td>Trapping Rain Water</td>
+<td><a href="https://leetcode.com/problems/trapping-rain-water" target="_blank">Link</a></td>
+<td>Two Pointers (tallest walls from ends)</td>
+<td><code>int l=0,r=n-1, maxL=0,maxR=0, water=0; while(l<r){ +="maxR" -="" <="" code="" else="" height[l++];="" height[r--];="" height[r]){="" if(height[l]="" maxl="Math.max(maxL,height[l]);" maxr="Math.max(maxR,height[r]);" water="" {="" }="" }<=""></r){></code></td>
 </tr>
 <tr>
-  <td>Best Time to Buy and Sell Stock</td>
-  <td><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock" target="_blank">Link</a></td>
-  <td>One-pass (track min price)</td>
-  <td><code>int min=Integer.MAX_VALUE, profit=0; for(int price: prices){ min=Math.min(min,price); profit=Math.max(profit, price-min); }</code></td>
-</tr>
+<td>17</td>
+<td>Roman to Integer</td>
+<td><a href="https://leetcode.com/problems/roman-to-integer" target="_blank">Link</a></td>
+<td>HashMap (roman numeral values)</td>
+<td><code>Map<character,integer> map = Map.of('I',1,'V',5,'X',10,'L',50,'C',100,'D',500,'M',1000); int sum=0; for(int i=0;i<s.length(); &&="" +="val;" -="val;" <="" code="" else="" i++){="" if(i<s.length()-1="" int="" map.get(s.charat(i+1)))="" sum="" val="" }<=""></s.length();></character,integer></code></td>
 <tr>
-  <td>Best Time to Buy and Sell Stock II</td>
-  <td><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii" target="_blank">Link</a></td>
-  <td>Greedy (take all positive differences)</td>
-  <td><code>int profit=0; for(int i=1;i&lt;prices.length;i++){ if(prices[i]&gt;prices[i-1]) profit += prices[i]-prices[i-1]; }</code></td>
+<td>18</td>
+<td>Integer to Roman</td>
+<td><a href="https://leetcode.com/problems/integer-to-roman" target="_blank">Link</a></td>
+<td>Greedy (value-symbol pairs)</td>
+<td><code>int[] vals={1000,900,500,400,100,90,50,40,10,9,5,4,1}; String[] syms={"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"}; StringBuilder res=new StringBuilder(); for(int i=0;i<vals.length;i++){ while(num="">=vals[i]){ num-=vals[i]; res.append(syms[i]); } }</vals.length;i++){></code></td>
+</tr><tr>
+<td>19</td>
+<td>Length of Last Word</td>
+<td><a href="https://leetcode.com/problems/length-of-last-word" target="_blank">Link</a></td>
+<td>String Parsing</td>
+<td><code>s = s.trim(); return s.length() - s.lastIndexOf(' ') - 1;</code></td>
 </tr>
+<td>20</td>
+<td>Longest Common Prefix</td>
+<td><a href="https://leetcode.com/problems/longest-common-prefix" target="_blank">Link</a></td>
+<td>String Scanning (compare prefixes)</td>
+<td><code>String prefix = strs[0]; for(int i=1;i<strs.length;i++){ code="" prefix="prefix.substring(0," prefix.length()-1);="" while(!strs[i].startswith(prefix)){="" }="" }<=""></strs.length;i++){></code></td>
+
+<td>21</td>
+<td>Reverse Words in a String</td>
+<td><a href="https://leetcode.com/problems/reverse-words-in-a-string" target="_blank">Link</a></td>
+<td>Split and Reverse</td>
+<td><code>String[] parts = s.trim().split("\s+"); Collections.reverse(Arrays.asList(parts)); return String.join(" ", parts);</code></td>
+
+<td>22</td>
+<td>Zigzag Conversion</td>
+<td><a href="https://leetcode.com/problems/zigzag-conversion" target="_blank">Link</a></td>
+<td>Simulation (zigzag rows)</td>
+<td><code>if(numRows==1) return s; StringBuilder[] rows = new StringBuilder[numRows]; Arrays.setAll(rows, i-&gt;new StringBuilder()); int idx=0, step=1; for(char c: s.toCharArray()){ rows[idx].append(c); if(idx==0) step=1; else if(idx==numRows-1) step=-1; idx += step; } return String.join("", rows);</code></td>
+
+<td>23</td>
+<td>Find the Index of the First Occurrence in a String</td>
+<td><a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string" target="_blank">Link</a></td>
+<td>String Search (two pointers)</td>
+<td><code>for(int i=0;i&lt;=haystack.length()-needle.length(); i++){ if(haystack.startsWith(needle, i)) return i; } return -1;</code></td>
+
+<td>24</td>
+<td>Text Justification</td>
+<td><a href="https://leetcode.com/problems/text-justification" target="_blank">Link</a></td>
+<td>Simulation (construct each line)</td>
+<td><code>int spaces = maxWidth - totalChars; int gaps = wordsCount - 1; for(int j=0;j&lt;gaps;j++){ int pad = spaces/gaps + (j &lt; spaces % gaps ? 1 : 0); line += " ".repeat(pad) + words[start+j+1]; }</code></td>
+
+<td>25</td>
+<td>Valid Palindrome</td>
+<td><a href="https://leetcode.com/problems/valid-palindrome" target="_blank">Link</a></td>
+<td>Two Pointers</td>
+<td><code>int l=0,r=s.length()-1; while(l&lt;r){ if(!Character.isLetterOrDigit(s.charAt(l))) l++; else if(!Character.isLetterOrDigit(s.charAt(r))) r--; else if(Character.toLowerCase(s.charAt(l++)) != Character.toLowerCase(s.charAt(r--))) return false; } return true;</code></td>
+
+<td>26</td>
+<td>Is Subsequence</td>
+<td><a href="https://leetcode.com/problems/is-subsequence" target="_blank">Link</a></td>
+<td>Two Pointers</td>
+<td><code>int i=0,j=0; while(i&lt;s.length() &amp;&amp; j&lt;t.length()){ if(s.charAt(i)==t.charAt(j)) i++; j++; } return i == s.length();</code></td>
+
+<td>27</td>
+<td>Two Sum II - Input Array Is Sorted</td>
+<td><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted" target="_blank">Link</a></td>
+<td>Two Pointers</td>
+<td><code>int l=0,r=nums.length-1; while(l&lt;r){ int sum=nums[l]+nums[r]; if(sum==target) return new int[]{l+1,r+1}; if(sum&lt;target) l++; else r--; }</code></td>
+
+<td>28</td>
+<td>Container With Most Water</td>
+<td><a href="https://leetcode.com/problems/container-with-most-water" target="_blank">Link</a></td>
+<td>Two Pointers</td>
+<td><code>int l=0,r=height.length-1,max=0; while(l&lt;r){ max=Math.max(max,(r-l)*Math.min(height[l],height[r])); if(height[l]&lt;height[r]) l++; else r--; }</code></td>
+
+<td>29</td>
+<td>3Sum</td>
+<td><a href="https://leetcode.com/problems/3sum" target="_blank">Link</a></td>
+<td>Two Pointers (after sorting)</td>
+<td><code>Arrays.sort(nums); for(int i=0;i&lt;nums.length-2;i++){ if(i==0||nums[i]!=nums[i-1]){ int l=i+1,r=nums.length-1; while(l&lt;r){ int sum=nums[i]+nums[l]+nums[r]; if(sum==0){ /* found triple */ l++; r--; } else if(sum&lt;0) l++; else r--; } } }</code></td>
+
+<td>30</td>
+<td>Minimum Size Subarray Sum</td>
+<td><a href="https://leetcode.com/problems/minimum-size-subarray-sum" target="_blank">Link</a></td>
+<td>Sliding Window (two pointers)</td>
+<td><code>int l=0,sum=0,minLen=Integer.MAX_VALUE; for(int r=0;r&lt;nums.length;r++){ sum+=nums[r]; while(sum&gt;=target){ minLen=Math.min(minLen,r-l+1); sum-=nums[l++]; } }</code></td>
+
+<td>31</td>
+<td>Longest Substring Without Repeating Characters</td>
+<td><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters" target="_blank">Link</a></td>
+<td>Sliding Window + HashSet</td>
+<td><code>Set&lt;Character&gt; set=new HashSet&lt;&gt;(); int l=0,max=0; for(int r=0;r&lt;s.length();r++){ while(set.contains(s.charAt(r))){ set.remove(s.charAt(l++)); } set.add(s.charAt(r)); max=Math.max(max,r-l+1); }</code></td>
+
+<td>32</td>
+<td>Substring with Concatenation of All Words</td>
+<td><a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words" target="_blank">Link</a></td>
+<td>Sliding Window + HashMap</td>
+<td><code>Map&lt;String,Integer&gt; freq = new HashMap&lt;&gt;(); for(String w: words) freq.put(w, freq.getOrDefault(w,0)+1); int wordLen = words[0].length(); for(int i=0;i&lt;wordLen;i++){ Map&lt;String,Integer&gt; seen=new HashMap&lt;&gt;(); int count=0, l=i; for(int j=i;j&lt;=s.length()-wordLen;j+=wordLen){ String sub=s.substring(j,j+wordLen); if(freq.containsKey(sub)){ seen.put(sub, seen.getOrDefault(sub,0)+1); count++; while(seen.get(sub) &gt; freq.get(sub)){ String left = s.substring(l,l+wordLen); seen.put(left, seen.get(left)-1); l += wordLen; count--; } if(count == words.length) result.add(l); } else { seen.clear(); count=0; l=j+wordLen; } } }</code></td>
+
+<td>33</td>
+<td>Minimum Window Substring</td>
+<td><a href="https://leetcode.com/problems/minimum-window-substring" target="_blank">Link</a></td>
+<td>Sliding Window (two counters)</td>
+<td><code>int[] freq=new int[128]; for(char c: t.toCharArray()) freq[c]++; int required=t.length(), l=0, minLen=Integer.MAX_VALUE, start=0; for(int r=0;r&lt;s.length();r++){ if(freq[s.charAt(r)]-- &gt; 0) required--; while(required==0){ if(r-l+1&lt;minLen){ minLen=r-l+1; start=l; } if(++freq[s.charAt(l++)] &gt; 0) required++; } }</code></td>
+
+<td>34</td>
+<td>Valid Sudoku</td>
+<td><a href="https://leetcode.com/problems/valid-sudoku" target="_blank">Link</a></td>
+<td>HashSet (track seen numbers)</td>
+<td><code>Set&lt;String&gt; seen=new HashSet&lt;&gt;(); for(int i=0;i&lt;9;i++){ for(int j=0;j&lt;9;j++){ char c=board[i][j]; if(c!='.'){ if(!seen.add(c+" in row "+i) || !seen.add(c+" in col "+j) || !seen.add(c+" in block "+i/3+"-"+j/3)) return false; } } }</code></td>
+
+<td>35</td>
+<td>Spiral Matrix</td>
+<td><a href="https://leetcode.com/problems/spiral-matrix" target="_blank">Link</a></td>
+<td>Simulation (layer by layer)</td>
+<td><code>int top=0,bottom=m-1,left=0,right=n-1; List&lt;Integer&gt; res=new ArrayList&lt;&gt;(); while(top&lt;=bottom &amp;&amp; left&lt;=right){ for(int j=left;j&lt;=right;j++) res.add(matrix[top][j]); top++; for(int i=top;i&lt;=bottom;i++) res.add(matrix[i][right]); right--; if(top&lt;=bottom){ for(int j=right;j&gt;=left;j--) res.add(matrix[bottom][j]); bottom--; } if(left&lt;=right){ for(int i=bottom;i&gt;=top;i--) res.add(matrix[i][left]); left++; } }</code></td>
+
+<td>36</td>
+<td>Set Matrix Zeroes</td>
+<td><a href="https://leetcode.com/problems/set-matrix-zeroes" target="_blank">Link</a></td>
+<td>Use first row/col as markers</td>
+<td><code>boolean firstRow=false, firstCol=false; for(int j=0;j&lt;n;j++){ if(matrix[0][j]==0) firstRow=true; } for(int i=0;i&lt;m;i++){ if(matrix[i][0]==0) firstCol=true; } for(int i=1;i&lt;m;i++){ for(int j=1;j&lt;n;j++){ if(matrix[i][j]==0){ matrix[0][j]=0; matrix[i][0]=0; } } } for(int i=1;i&lt;m;i++){ if(matrix[i][0]==0) Arrays.fill(matrix[i],0); } for(int j=1;j&lt;n;j++){ if(matrix[0][j]==0) for(int i=0;i&lt;m;i++) matrix[i][j]=0; } if(firstRow) Arrays.fill(matrix[0],0); if(firstCol) for(int i=0;i&lt;m;i++) matrix[i][0]=0;</code></td>
+
+<td>37</td>
+<td>Game of Life</td>
+<td><a href="https://leetcode.com/problems/game-of-life" target="_blank">Link</a></td>
+<td>In-place state encoding (bit manipulation)</td>
+<td><code>for(int i=0;i&lt;m;i++){ for(int j=0;j&lt;n;j++){ int lives = countLiveNeighbors(board,i,j); if(board[i][j]==1 &amp;&amp; (lives==2||lives==3)) board[i][j]=3; if(board[i][j]==0 &amp;&amp; lives==3) board[i][j]=2; } } for(int i=0;i&lt;m;i++){ for(int j=0;j&lt;n;j++){ board[i][j] &gt;&gt;= 1; } }</code></td>
+
 <tr>
-  <td>Jump Game</td>
-  <td><a href="https://leetcode.com/problems/jump-game" target="_blank">Link</a></td>
-  <td>Greedy (track furthest reach)</td>
-  <td><code>int reach=0; for(int i=0;i&lt;nums.length &amp;&amp; i&lt;=reach; i++){ reach = Math.max(reach, i+nums[i]); }</code></td>
+<td>38</td>
+<td>Ransom Note</td>
+<td><a href="https://leetcode.com/problems/ransom-note" target="_blank">Link</a></td>
+<td>Counting (frequency of letters)</td>
+<td><code>int[] count=new int[26]; for(char c: magazine.toCharArray()) count[c-'a']++; for(char c: ransomNote.toCharArray()){ if(count[c-'a']-- == 0) return false; } return true;</code></td>
 </tr>
-<tr>
-  <td>Jump Game II</td>
-  <td><a href="https://leetcode.com/problems/jump-game-ii" target="_blank">Link</a></td>
-  <td>Greedy (farthest reach in current range)</td>
-  <td><code>int jumps=0, end=0, far=0; for(int i=0;i&lt;nums.length-1;i++){ far=Math.max(far,i+nums[i]); if(i==end){ jumps++; end=far; } }</code></td>
-</tr>
-      <tr>
-  <td>H-Index</td>
-  <td><a href="https://leetcode.com/problems/h-index" target="_blank">Link</a></td>
-  <td>Sorting (then find break point)</td>
-  <td><code>Arrays.sort(citations); int n=citations.length; for(int i=0;i<n;i++){ if(citations[i]>=n-i) return n-i; } return 0;</code></td>
-</tr>
-<tr>
-  <td>Insert Delete GetRandom O(1)</td>
-  <td><a href="https://leetcode.com/problems/insert-delete-getrandom-o1" target="_blank">Link</a></td>
-  <td>HashMap + ArrayList (amortized O(1))</td>
-  <td><code>int idx = map.get(val); int last = list.get(list.size()-1); list.set(idx, last); map.put(last, idx); list.remove(list.size()-1); map.remove(val);</code></td>
-</tr>
-<tr>
-  <td>Product of Array Except Self</td>
-  <td><a href="https://leetcode.com/problems/product-of-array-except-self" target="_blank">Link</a></td>
-  <td>Prefix & Suffix products (two-pass)</td>
-  <td><code>int[] res=new int[n]; res[0]=1; for(int i=1;i<n;i++){ res[i] = res[i-1]*nums[i-1]; } for(int i=n-1, R=1; i>=0; i--){ res[i]*=R; R *= nums[i]; }</code></td>
-</tr>
-<tr>
-  <td>Gas Station</td>
-  <td><a href="https://leetcode.com/problems/gas-station" target="_blank">Link</a></td>
-  <td>Greedy (single pass)</td>
-  <td><code>int start=0, tank=0, total=0; for(int i=0;i<n;i++){ int gain=gas[i]-cost[i]; tank += gain; total += gain; if(tank<0){ start=i+1; tank=0; } } return total>=0? start: -1;</code></td>
-</tr>
-<tr>
-  <td>Candy</td>
-  <td><a href="https://leetcode.com/problems/candy" target="_blank">Link</a></td>
-  <td>Greedy (two-pass)</td>
-  <td><code>int[] candy = new int[n]; Arrays.fill(candy,1); for(int i=1;i<n;i++){ if(rating[i]>rating[i-1]) candy[i]=candy[i-1]+1; } for(int i=n-2;i>=0;i--){ if(rating[i]>rating[i+1]) candy[i] = Math.max(candy[i], candy[i+1]+1); }</code></td>
-</tr>
-<tr>
-  <td>Trapping Rain Water</td>
-  <td><a href="https://leetcode.com/problems/trapping-rain-water" target="_blank">Link</a></td>
-  <td>Two Pointers (tallest walls from ends)</td>
-  <td><code>int l=0,r=n-1, maxL=0,maxR=0, water=0; while(l<r){ if(height[l] < height[r]){ maxL=Math.max(maxL,height[l]); water += maxL - height[l++]; } else { maxR=Math.max(maxR,height[r]); water += maxR - height[r--]; } }</code></td>
-</tr>
-<tr>
-  <td>Roman to Integer</td>
-  <td><a href="https://leetcode.com/problems/roman-to-integer" target="_blank">Link</a></td>
-  <td>HashMap (roman numeral values)</td>
-  <td><code>Map<Character,Integer> map = Map.of('I',1,'V',5,'X',10,'L',50,'C',100,'D',500,'M',1000); int sum=0; for(int i=0;i<s.length(); i++){ int val = map.get(s.charAt(i)); if(i<s.length()-1 && val < map.get(s.charAt(i+1))) sum -= val; else sum += val; }</code></td>
-</tr>
-<tr>
-  <td>Integer to Roman</td>
-  <td><a href="https://leetcode.com/problems/integer-to-roman" target="_blank">Link</a></td>
-  <td>Greedy (value-symbol pairs)</td>
-  <td><code>int[] vals={1000,900,500,400,100,90,50,40,10,9,5,4,1}; String[] syms={"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"}; StringBuilder res=new StringBuilder(); for(int i=0;i<vals.length;i++){ while(num>=vals[i]){ num-=vals[i]; res.append(syms[i]); } }</code></td>
-</tr>
-<tr>
-  <td>Length of Last Word</td>
-  <td><a href="https://leetcode.com/problems/length-of-last-word" target="_blank">Link</a></td>
-  <td>String Parsing</td>
-  <td><code>s = s.trim(); return s.length() - s.lastIndexOf(' ') - 1;</code></td>
-</tr>
-<tr>
-  <td>Longest Common Prefix</td>
-  <td><a href="https://leetcode.com/problems/longest-common-prefix" target="_blank">Link</a></td>
-  <td>String Scanning (compare prefixes)</td>
-  <td><code>String prefix = strs[0]; for(int i=1;i<strs.length;i++){ while(!strs[i].startsWith(prefix)){ prefix = prefix.substring(0, prefix.length()-1); } }</code></td>
-</tr>
-<tr>
-  <td>Reverse Words in a String</td>
-  <td><a href="https://leetcode.com/problems/reverse-words-in-a-string" target="_blank">Link</a></td>
-  <td>Split and Reverse</td>
-  <td><code>String[] parts = s.trim().split("\s+"); Collections.reverse(Arrays.asList(parts)); return String.join(" ", parts);</code></td>
-</tr>
-<tr>
-  <td>Zigzag Conversion</td>
-  <td><a href="https://leetcode.com/problems/zigzag-conversion" target="_blank">Link</a></td>
-  <td>Simulation (zigzag rows)</td>
-  <td><code>if(numRows==1) return s; StringBuilder[] rows = new StringBuilder[numRows]; Arrays.setAll(rows, i-&gt;new StringBuilder()); int idx=0, step=1; for(char c: s.toCharArray()){ rows[idx].append(c); if(idx==0) step=1; else if(idx==numRows-1) step=-1; idx += step; } return String.join("", rows);</code></td>
-</tr>
-<tr>
-  <td>Find the Index of the First Occurrence in a String</td>
-  <td><a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string" target="_blank">Link</a></td>
-  <td>String Search (two pointers)</td>
-  <td><code>for(int i=0;i&lt;=haystack.length()-needle.length(); i++){ if(haystack.startsWith(needle, i)) return i; } return -1;</code></td>
-</tr>
-<tr>
-  <td>Text Justification</td>
-  <td><a href="https://leetcode.com/problems/text-justification" target="_blank">Link</a></td>
-  <td>Simulation (construct each line)</td>
-  <td><code>int spaces = maxWidth - totalChars; int gaps = wordsCount - 1; for(int j=0;j&lt;gaps;j++){ int pad = spaces/gaps + (j &lt; spaces % gaps ? 1 : 0); line += " ".repeat(pad) + words[start+j+1]; }</code></td>
-</tr>
-<tr>
-  <td>Valid Palindrome</td>
-  <td><a href="https://leetcode.com/problems/valid-palindrome" target="_blank">Link</a></td>
-  <td>Two Pointers</td>
-  <td><code>int l=0,r=s.length()-1; while(l&lt;r){ if(!Character.isLetterOrDigit(s.charAt(l))) l++; else if(!Character.isLetterOrDigit(s.charAt(r))) r--; else if(Character.toLowerCase(s.charAt(l++)) != Character.toLowerCase(s.charAt(r--))) return false; } return true;</code></td>
-</tr>
-<tr>
-  <td>Is Subsequence</td>
-  <td><a href="https://leetcode.com/problems/is-subsequence" target="_blank">Link</a></td>
-  <td>Two Pointers</td>
-  <td><code>int i=0,j=0; while(i&lt;s.length() &amp;&amp; j&lt;t.length()){ if(s.charAt(i)==t.charAt(j)) i++; j++; } return i == s.length();</code></td>
-</tr>
-<tr>
-  <td>Two Sum II - Input Array Is Sorted</td>
-  <td><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted" target="_blank">Link</a></td>
-  <td>Two Pointers</td>
-  <td><code>int l=0,r=nums.length-1; while(l&lt;r){ int sum=nums[l]+nums[r]; if(sum==target) return new int[]{l+1,r+1}; if(sum&lt;target) l++; else r--; }</code></td>
-</tr>
-<tr>
-  <td>Container With Most Water</td>
-  <td><a href="https://leetcode.com/problems/container-with-most-water" target="_blank">Link</a></td>
-  <td>Two Pointers</td>
-  <td><code>int l=0,r=height.length-1,max=0; while(l&lt;r){ max=Math.max(max,(r-l)*Math.min(height[l],height[r])); if(height[l]&lt;height[r]) l++; else r--; }</code></td>
-</tr>
-<tr>
-  <td>3Sum</td>
-  <td><a href="https://leetcode.com/problems/3sum" target="_blank">Link</a></td>
-  <td>Two Pointers (after sorting)</td>
-  <td><code>Arrays.sort(nums); for(int i=0;i&lt;nums.length-2;i++){ if(i==0||nums[i]!=nums[i-1]){ int l=i+1,r=nums.length-1; while(l&lt;r){ int sum=nums[i]+nums[l]+nums[r]; if(sum==0){ /* found triple */ l++; r--; } else if(sum&lt;0) l++; else r--; } } }</code></td>
-</tr>
-<tr>
-  <td>Minimum Size Subarray Sum</td>
-  <td><a href="https://leetcode.com/problems/minimum-size-subarray-sum" target="_blank">Link</a></td>
-  <td>Sliding Window (two pointers)</td>
-  <td><code>int l=0,sum=0,minLen=Integer.MAX_VALUE; for(int r=0;r&lt;nums.length;r++){ sum+=nums[r]; while(sum&gt;=target){ minLen=Math.min(minLen,r-l+1); sum-=nums[l++]; } }</code></td>
-</tr>
-<tr>
-  <td>Longest Substring Without Repeating Characters</td>
-  <td><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters" target="_blank">Link</a></td>
-  <td>Sliding Window + HashSet</td>
-  <td><code>Set&lt;Character&gt; set=new HashSet&lt;&gt;(); int l=0,max=0; for(int r=0;r&lt;s.length();r++){ while(set.contains(s.charAt(r))){ set.remove(s.charAt(l++)); } set.add(s.charAt(r)); max=Math.max(max,r-l+1); }</code></td>
-</tr>
-<tr>
-  <td>Substring with Concatenation of All Words</td>
-  <td><a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words" target="_blank">Link</a></td>
-  <td>Sliding Window + HashMap</td>
-  <td><code>Map&lt;String,Integer&gt; freq = new HashMap&lt;&gt;(); for(String w: words) freq.put(w, freq.getOrDefault(w,0)+1); int wordLen = words[0].length(); for(int i=0;i&lt;wordLen;i++){ Map&lt;String,Integer&gt; seen=new HashMap&lt;&gt;(); int count=0, l=i; for(int j=i;j&lt;=s.length()-wordLen;j+=wordLen){ String sub=s.substring(j,j+wordLen); if(freq.containsKey(sub)){ seen.put(sub, seen.getOrDefault(sub,0)+1); count++; while(seen.get(sub) &gt; freq.get(sub)){ String left = s.substring(l,l+wordLen); seen.put(left, seen.get(left)-1); l += wordLen; count--; } if(count == words.length) result.add(l); } else { seen.clear(); count=0; l=j+wordLen; } } }</code></td>
-</tr>
-<tr>
-  <td>Minimum Window Substring</td>
-  <td><a href="https://leetcode.com/problems/minimum-window-substring" target="_blank">Link</a></td>
-  <td>Sliding Window (two counters)</td>
-  <td><code>int[] freq=new int[128]; for(char c: t.toCharArray()) freq[c]++; int required=t.length(), l=0, minLen=Integer.MAX_VALUE, start=0; for(int r=0;r&lt;s.length();r++){ if(freq[s.charAt(r)]-- &gt; 0) required--; while(required==0){ if(r-l+1&lt;minLen){ minLen=r-l+1; start=l; } if(++freq[s.charAt(l++)] &gt; 0) required++; } }</code></td>
-</tr>
-<tr>
-  <td>Valid Sudoku</td>
-  <td><a href="https://leetcode.com/problems/valid-sudoku" target="_blank">Link</a></td>
-  <td>HashSet (track seen numbers)</td>
-  <td><code>Set&lt;String&gt; seen=new HashSet&lt;&gt;(); for(int i=0;i&lt;9;i++){ for(int j=0;j&lt;9;j++){ char c=board[i][j]; if(c!='.'){ if(!seen.add(c+" in row "+i) || !seen.add(c+" in col "+j) || !seen.add(c+" in block "+i/3+"-"+j/3)) return false; } } }</code></td>
-</tr>
-<tr>
-  <td>Spiral Matrix</td>
-  <td><a href="https://leetcode.com/problems/spiral-matrix" target="_blank">Link</a></td>
-  <td>Simulation (layer by layer)</td>
-  <td><code>int top=0,bottom=m-1,left=0,right=n-1; List&lt;Integer&gt; res=new ArrayList&lt;&gt;(); while(top&lt;=bottom &amp;&amp; left&lt;=right){ for(int j=left;j&lt;=right;j++) res.add(matrix[top][j]); top++; for(int i=top;i&lt;=bottom;i++) res.add(matrix[i][right]); right--; if(top&lt;=bottom){ for(int j=right;j&gt;=left;j--) res.add(matrix[bottom][j]); bottom--; } if(left&lt;=right){ for(int i=bottom;i&gt;=top;i--) res.add(matrix[i][left]); left++; } }</code></td>
-</tr>
-<tr>
-  <td>Set Matrix Zeroes</td>
-  <td><a href="https://leetcode.com/problems/set-matrix-zeroes" target="_blank">Link</a></td>
-  <td>Use first row/col as markers</td>
-  <td><code>boolean firstRow=false, firstCol=false; for(int j=0;j&lt;n;j++){ if(matrix[0][j]==0) firstRow=true; } for(int i=0;i&lt;m;i++){ if(matrix[i][0]==0) firstCol=true; } for(int i=1;i&lt;m;i++){ for(int j=1;j&lt;n;j++){ if(matrix[i][j]==0){ matrix[0][j]=0; matrix[i][0]=0; } } } for(int i=1;i&lt;m;i++){ if(matrix[i][0]==0) Arrays.fill(matrix[i],0); } for(int j=1;j&lt;n;j++){ if(matrix[0][j]==0) for(int i=0;i&lt;m;i++) matrix[i][j]=0; } if(firstRow) Arrays.fill(matrix[0],0); if(firstCol) for(int i=0;i&lt;m;i++) matrix[i][0]=0;</code></td>
-</tr>
-<tr>
-  <td>Game of Life</td>
-  <td><a href="https://leetcode.com/problems/game-of-life" target="_blank">Link</a></td>
-  <td>In-place state encoding (bit manipulation)</td>
-  <td><code>for(int i=0;i&lt;m;i++){ for(int j=0;j&lt;n;j++){ int lives = countLiveNeighbors(board,i,j); if(board[i][j]==1 &amp;&amp; (lives==2||lives==3)) board[i][j]=3; if(board[i][j]==0 &amp;&amp; lives==3) board[i][j]=2; } } for(int i=0;i&lt;m;i++){ for(int j=0;j&lt;n;j++){ board[i][j] &gt;&gt;= 1; } }</code></td>
-</tr>
-<tr>
-  <td>Ransom Note</td>
-  <td><a href="https://leetcode.com/problems/ransom-note" target="_blank">Link</a></td>
-  <td>Counting (frequency of letters)</td>
-  <td><code>int[] count=new int[26]; for(char c: magazine.toCharArray()) count[c-'a']++; for(char c: ransomNote.toCharArray()){ if(count[c-'a']-- == 0) return false; } return true;</code></td>
-</tr>
-<tr>
-  <td>Isomorphic Strings</td>
-  <td><a href="https://leetcode.com/problems/isomorphic-strings" target="_blank">Link</a></td>
-  <td>HashMap mapping</td>
-  <td><code>Map&lt;Character,Character&gt; map=new HashMap&lt;&gt;(); Set&lt;Character&gt; used=new HashSet&lt;&gt;(); for(int i=0;i&lt;s.length();i++){ char c1=s.charAt(i), c2=t.charAt(i); if(map.containsKey(c1)){ if(map.get(c1)!=c2) return false; } else { if(used.contains(c2)) return false; map.put(c1,c2); used.add(c2); } }</code></td>
-</tr>
-<tr>
-  <td>Word Pattern</td>
-  <td><a href="https://leetcode.com/problems/word-pattern" target="_blank">Link</a></td>
-  <td>HashMap (two-way mapping)</td>
-  <td><code>String[] words = s.split(" "); if(words.length != pattern.length()) return false; Map&lt;Character,String&gt; map=new HashMap&lt;&gt;(); Map&lt;String,Character&gt; map2=new HashMap&lt;&gt;(); for(int i=0;i&lt;pattern.length();i++){ char c=pattern.charAt(i); String w=words[i]; if(map.containsKey(c)){ if(!map.get(c).equals(w)) return false; } else { if(map2.containsKey(w)) return false; map.put(c,w); map2.put(w,c); } }</code></td>
-</tr>
-<!-- more to come -->
-<tr>
-  <td>Valid Parentheses</td>
-  <td><a href="https://leetcode.com/problems/valid-parentheses" target="_blank">Link</a></td>
-  <td>Stack</td>
-  <td><code>Stack&lt;Character&gt; st=new Stack&lt;&gt;(); for(char c: s.toCharArray()){ if(c=='('||c=='{'||c=='[') st.push(c); else if(st.isEmpty() || Math.abs(c - st.pop()) &gt; 2) return false; } return st.isEmpty();</code></td>
-</tr>
-<tr>
-  <td>Simplify Path</td>
-  <td><a href="https://leetcode.com/problems/simplify-path" target="_blank">Link</a></td>
-  <td>Stack (split and process components)</td>
-  <td><code>Stack&lt;String&gt; st=new Stack&lt;&gt;(); for(String dir: path.split("/")){ if(dir.equals("..")){ if(!st.isEmpty()) st.pop(); } else if(dir.length()&gt;0 &amp;&amp; !dir.equals(".")) st.push(dir); } return "/" + String.join("/", st);</code></td>
-</tr>
-<tr>
-  <td>Min Stack</td>
-  <td><a href="https://leetcode.com/problems/min-stack" target="_blank">Link</a></td>
-  <td>Stack (track min value)</td>
-  <td><code>Stack&lt;int[]&gt; st=new Stack&lt;&gt;(); public void push(int x){ if(st.isEmpty()) st.push(new int[]{x,x}); else st.push(new int[]{x, Math.min(x, st.peek()[1])}); } public void pop(){ st.pop(); } public int top(){ return st.peek()[0]; } public int getMin(){ return st.peek()[1]; }</code></td>
-</tr>
-<tr>
-  <td>Evaluate Reverse Polish Notation</td>
-  <td><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation" target="_blank">Link</a></td>
-  <td>Stack (evaluate expression)</td>
-  <td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); for(String tok: tokens){ if(tok.equals("+")||tok.equals("-")||tok.equals("*")||tok.equals("/")){ int b=st.pop(), a=st.pop(); if(tok.equals("+")) st.push(a+b); if(tok.equals("-")) st.push(a-b); if(tok.equals("*")) st.push(a*b); if(tok.equals("/")) st.push(a/b); } else st.push(Integer.valueOf(tok)); } return st.pop();</code></td>
-</tr>
-<tr>
-  <td>Basic Calculator</td>
-  <td><a href="https://leetcode.com/problems/basic-calculator" target="_blank">Link</a></td>
-  <td>Stack (evaluate with sign and parentheses)</td>
-  <td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); int result=0, sign=1; for(char c: s.toCharArray()){ if(Character.isDigit(c)){ int num=c - '0'; while(i+1&lt;s.length() &amp;&amp; Character.isDigit(s.charAt(i+1))){ num = num*10 + (s.charAt(++i)-'0'); } result += sign * num; } else if(c=='+') sign=1; else if(c=='-') sign=-1; else if(c=='('){ st.push(result); st.push(sign); result=0; sign=1; } else if(c==')'){ result = result * st.pop() + st.pop(); } } return result;</code></td>
-</tr>
+<td>39</td>
+<td>Isomorphic Strings</td>
+<td><a href="https://leetcode.com/problems/isomorphic-strings" target="_blank">Link</a></td>
+<td>HashMap mapping</td>
+<td><code>Map&lt;Character,Character&gt; map=new HashMap&lt;&gt;(); Set&lt;Character&gt; used=new HashSet&lt;&gt;(); for(int i=0;i&lt;s.length();i++){ char c1=s.charAt(i), c2=t.charAt(i); if(map.containsKey(c1)){ if(map.get(c1)!=c2) return false; } else { if(used.contains(c2)) return false; map.put(c1,c2); used.add(c2); } }</code></td>
+
+<td>40</td>
+<td>Word Pattern</td>
+<td><a href="https://leetcode.com/problems/word-pattern" target="_blank">Link</a></td>
+<td>HashMap (two-way mapping)</td>
+<td><code>String[] words = s.split(" "); if(words.length != pattern.length()) return false; Map&lt;Character,String&gt; map=new HashMap&lt;&gt;(); Map&lt;String,Character&gt; map2=new HashMap&lt;&gt;(); for(int i=0;i&lt;pattern.length();i++){ char c=pattern.charAt(i); String w=words[i]; if(map.containsKey(c)){ if(!map.get(c).equals(w)) return false; } else { if(map2.containsKey(w)) return false; map.put(c,w); map2.put(w,c); } }</code></td>
+
+<td>41</td>
+<td>Valid Parentheses</td>
+<td><a href="https://leetcode.com/problems/valid-parentheses" target="_blank">Link</a></td>
+<td>Stack</td>
+<td><code>Stack&lt;Character&gt; st=new Stack&lt;&gt;(); for(char c: s.toCharArray()){ if(c=='('||c=='{'||c=='[') st.push(c); else if(st.isEmpty() || Math.abs(c - st.pop()) &gt; 2) return false; } return st.isEmpty();</code></td>
+
+<td>42</td>
+<td>Simplify Path</td>
+<td><a href="https://leetcode.com/problems/simplify-path" target="_blank">Link</a></td>
+<td>Stack (split and process components)</td>
+<td><code>Stack&lt;String&gt; st=new Stack&lt;&gt;(); for(String dir: path.split("/")){ if(dir.equals("..")){ if(!st.isEmpty()) st.pop(); } else if(dir.length()&gt;0 &amp;&amp; !dir.equals(".")) st.push(dir); } return "/" + String.join("/", st);</code></td>
+
+<td>43</td>
+<td>Min Stack</td>
+<td><a href="https://leetcode.com/problems/min-stack" target="_blank">Link</a></td>
+<td>Stack (track min value)</td>
+<td><code>Stack&lt;int[]&gt; st=new Stack&lt;&gt;(); public void push(int x){ if(st.isEmpty()) st.push(new int[]{x,x}); else st.push(new int[]{x, Math.min(x, st.peek()[1])}); } public void pop(){ st.pop(); } public int top(){ return st.peek()[0]; } public int getMin(){ return st.peek()[1]; }</code></td>
+
+<td>44</td>
+<td>Evaluate Reverse Polish Notation</td>
+<td><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation" target="_blank">Link</a></td>
+<td>Stack (evaluate expression)</td>
+<td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); for(String tok: tokens){ if(tok.equals("+")||tok.equals("-")||tok.equals("*")||tok.equals("/")){ int b=st.pop(), a=st.pop(); if(tok.equals("+")) st.push(a+b); if(tok.equals("-")) st.push(a-b); if(tok.equals("*")) st.push(a*b); if(tok.equals("/")) st.push(a/b); } else st.push(Integer.valueOf(tok)); } return st.pop();</code></td>
+
+<td>45</td>
+<td>Basic Calculator</td>
+<td><a href="https://leetcode.com/problems/basic-calculator" target="_blank">Link</a></td>
+<td>Stack (evaluate with sign and parentheses)</td>
+<td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); int result=0, sign=1; for(char c: s.toCharArray()){ if(Character.isDigit(c)){ int num=c - '0'; while(i+1&lt;s.length() &amp;&amp; Character.isDigit(s.charAt(i+1))){ num = num*10 + (s.charAt(++i)-'0'); } result += sign * num; } else if(c=='+') sign=1; else if(c=='-') sign=-1; else if(c=='('){ st.push(result); st.push(sign); result=0; sign=1; } else if(c==')'){ result = result * st.pop() + st.pop(); } } return result;</code></td>
+
 <!-- Next batch incoming... -->
-<tr>
-  <td>Valid Parentheses</td>
-  <td><a href="https://leetcode.com/problems/valid-parentheses" target="_blank">Link</a></td>
-  <td>Stack</td>
-  <td><code>Stack&lt;Character&gt; st=new Stack&lt;&gt;(); for(char c: s.toCharArray()){ if(c=='('||c=='{'||c=='[') st.push(c); else if(st.isEmpty() || Math.abs(c - st.pop()) &gt; 2) return false; } return st.isEmpty();</code></td>
-</tr>
-<tr>
-  <td>Simplify Path</td>
-  <td><a href="https://leetcode.com/problems/simplify-path" target="_blank">Link</a></td>
-  <td>Stack (split and process components)</td>
-  <td><code>Stack&lt;String&gt; st=new Stack&lt;&gt;(); for(String dir: path.split("/")){ if(dir.equals("..")){ if(!st.isEmpty()) st.pop(); } else if(dir.length()&gt;0 &amp;&amp; !dir.equals(".")) st.push(dir); } return "/" + String.join("/", st);</code></td>
-</tr>
-<tr>
-  <td>Min Stack</td>
-  <td><a href="https://leetcode.com/problems/min-stack" target="_blank">Link</a></td>
-  <td>Stack (track min value)</td>
-  <td><code>Stack&lt;int[]&gt; st=new Stack&lt;&gt;(); public void push(int x){ if(st.isEmpty()) st.push(new int[]{x,x}); else st.push(new int[]{x, Math.min(x, st.peek()[1])}); } public void pop(){ st.pop(); } public int top(){ return st.peek()[0]; } public int getMin(){ return st.peek()[1]; }</code></td>
-</tr>
-<tr>
-  <td>Evaluate Reverse Polish Notation</td>
-  <td><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation" target="_blank">Link</a></td>
-  <td>Stack (evaluate expression)</td>
-  <td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); for(String tok: tokens){ if(tok.equals("+")||tok.equals("-")||tok.equals("*")||tok.equals("/")){ int b=st.pop(), a=st.pop(); if(tok.equals("+")) st.push(a+b); if(tok.equals("-")) st.push(a-b); if(tok.equals("*")) st.push(a*b); if(tok.equals("/")) st.push(a/b); } else st.push(Integer.valueOf(tok)); } return st.pop();</code></td>
-</tr>
-<tr>
-  <td>Basic Calculator</td>
-  <td><a href="https://leetcode.com/problems/basic-calculator" target="_blank">Link</a></td>
-  <td>Stack (evaluate with sign and parentheses)</td>
-  <td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); int result=0, sign=1; for(char c: s.toCharArray()){ if(Character.isDigit(c)){ int num=c - '0'; while(i+1&lt;s.length() &amp;&amp; Character.isDigit(s.charAt(i+1))){ num = num*10 + (s.charAt(++i)-'0'); } result += sign * num; } else if(c=='+') sign=1; else if(c=='-') sign=-1; else if(c=='('){ st.push(result); st.push(sign); result=0; sign=1; } else if(c==')'){ result = result * st.pop() + st.pop(); } } return result;</code></td>
-</tr>
-<!-- continuing... -->
-<tr>
-  <td>Valid Anagram</td>
-  <td><a href="https://leetcode.com/problems/valid-anagram" target="_blank">Link</a></td>
-  <td>Sorting</td>
-  <td><code>char[] a1=s.toCharArray(), a2=t.toCharArray(); Arrays.sort(a1); Arrays.sort(a2); return Arrays.equals(a1,a2);</code></td>
-</tr>
-<tr>
-  <td>Group Anagrams</td>
-  <td><a href="https://leetcode.com/problems/group-anagrams" target="_blank">Link</a></td>
-  <td>Sorting & HashMap</td>
-  <td><code>Map&lt;String,List&lt;String&gt;&gt; map=new HashMap&lt;&gt;(); for(String w: strs){ char[] arr=w.toCharArray(); Arrays.sort(arr); String key=new String(arr); map.computeIfAbsent(key, k-&gt;new ArrayList&lt;&gt;()).add(w); }</code></td>
-</tr>
-<tr>
-  <td>Two Sum</td>
-  <td><a href="https://leetcode.com/problems/two-sum" target="_blank">Link</a></td>
-  <td>HashMap (one-pass)</td>
-  <td><code>Map&lt;Integer,Integer&gt; map=new HashMap&lt;&gt;(); for(int i=0;i&lt;nums.length;i++){ if(map.containsKey(target-nums[i])) return new int[]{map.get(target-nums[i]), i}; map.put(nums[i], i); }</code></td>
-</tr>
-<tr>
-  <td>Happy Number</td>
-  <td><a href="https://leetcode.com/problems/happy-number" target="_blank">Link</a></td>
-  <td>Cycle detection (Floyd’s)</td>
-  <td><code>int slow=n, fast=n; do{ slow = squareSum(slow); fast = squareSum(squareSum(fast)); } while(slow != fast); return slow == 1;</code></td>
-</tr>
-<tr>
-  <td>Contains Duplicate II</td>
-  <td><a href="https://leetcode.com/problems/contains-duplicate-ii" target="_blank">Link</a></td>
-  <td>HashMap (track index)</td>
-  <td><code>Map&lt;Integer,Integer&gt; map=new HashMap&lt;&gt;(); for(int i=0;i&lt;nums.length;i++){ if(map.containsKey(nums[i]) &amp;&amp; i - map.get(nums[i]) &lt;= k) return true; map.put(nums[i], i); } return false;</code></td>
-</tr>
-<tr>
-  <td>Longest Consecutive Sequence</td>
-  <td><a href="https://leetcode.com/problems/longest-consecutive-sequence" target="_blank">Link</a></td>
-  <td>HashSet (check start of sequence)</td>
-  <td><code>Set&lt;Integer&gt; set=new HashSet&lt;&gt;(); for(int num: nums) set.add(num); int longest=0; for(int num: set){ if(!set.contains(num-1)){ int cur=num; int streak=1; while(set.contains(cur+1)){ cur++; streak++; } longest=Math.max(longest, streak); } }</code></td>
-</tr>
-<tr>
-  <td>Summary Ranges</td>
-  <td><a href="https://leetcode.com/problems/summary-ranges" target="_blank">Link</a></td>
-  <td>Iteration</td>
-  <td><code>List&lt;String&gt; res=new ArrayList&lt;&gt;(); for(int i=0;i&lt;nums.length;i++){ int start=nums[i]; while(i&lt;nums.length-1 &amp;&amp; nums[i]+1==nums[i+1]) i++; if(start==nums[i]) res.add(""+start); else res.add(start+"->"+nums[i]); }</code></td>
-</tr>
-<tr>
-  <td>Merge Intervals</td>
-  <td><a href="https://leetcode.com/problems/merge-intervals" target="_blank">Link</a></td>
-  <td>Sort & Merge</td>
-  <td><code>Arrays.sort(intervals, (a,b)-&gt;a[0]-b[0]); List&lt;int[]&gt; merged=new ArrayList&lt;&gt;(); for(int[] interval: intervals){ if(merged.isEmpty() || merged.get(merged.size()-1)[1] &lt; interval[0]) merged.add(interval); else merged.get(merged.size()-1)[1] = Math.max(merged.get(merged.size()-1)[1], interval[1]); }</code></td>
-</tr>
-<tr>
-  <td>Insert Interval</td>
-  <td><a href="https://leetcode.com/problems/insert-interval" target="_blank">Link</a></td>
-  <td>Merge on the fly</td>
-  <td><code>List&lt;int[]&gt; res=new ArrayList&lt;&gt;(); int i=0; while(i&lt;intervals.length &amp;&amp; intervals[i][1] &lt; newInt[0]) res.add(intervals[i++]); while(i&lt;intervals.length &amp;&amp; intervals[i][0] &lt;= newInt[1]){ newInt[0] = Math.min(newInt[0], intervals[i][0]); newInt[1] = Math.max(newInt[1], intervals[i][1]); i++; } res.add(newInt); while(i&lt;intervals.length) res.add(intervals[i++]);</code></td>
-</tr>
-<tr>
-  <td>Minimum Number of Arrows to Burst Balloons</td>
-  <td><a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons" target="_blank">Link</a></td>
-  <td>Greedy (sort by end)</td>
-  <td><code>Arrays.sort(points, (a,b)-&gt;Integer.compare(a[1], b[1])); int arrows=1, end=points[0][1]; for(int i=1;i&lt;points.length;i++){ if(points[i][0] &gt; end){ arrows++; end = points[i][1]; } }</code></td>
-</tr>
+<td>46</td>
+<td>Valid Parentheses</td>
+<td><a href="https://leetcode.com/problems/valid-parentheses" target="_blank">Link</a></td>
+<td>Stack</td>
+<td><code>Stack&lt;Character&gt; st=new Stack&lt;&gt;(); for(char c: s.toCharArray()){ if(c=='('||c=='{'||c=='[') st.push(c); else if(st.isEmpty() || Math.abs(c - st.pop()) &gt; 2) return false; } return st.isEmpty();</code></td>
+
+<td>47</td>
+<td>Simplify Path</td>
+<td><a href="https://leetcode.com/problems/simplify-path" target="_blank">Link</a></td>
+<td>Stack (split and process components)</td>
+<td><code>Stack&lt;String&gt; st=new Stack&lt;&gt;(); for(String dir: path.split("/")){ if(dir.equals("..")){ if(!st.isEmpty()) st.pop(); } else if(dir.length()&gt;0 &amp;&amp; !dir.equals(".")) st.push(dir); } return "/" + String.join("/", st);</code></td>
+
+<td>48</td>
+<td>Min Stack</td>
+<td><a href="https://leetcode.com/problems/min-stack" target="_blank">Link</a></td>
+<td>Stack (track min value)</td>
+<td><code>Stack&lt;int[]&gt; st=new Stack&lt;&gt;(); public void push(int x){ if(st.isEmpty()) st.push(new int[]{x,x}); else st.push(new int[]{x, Math.min(x, st.peek()[1])}); } public void pop(){ st.pop(); } public int top(){ return st.peek()[0]; } public int getMin(){ return st.peek()[1]; }</code></td>
+
+<td>49</td>
+<td>Evaluate Reverse Polish Notation</td>
+<td><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation" target="_blank">Link</a></td>
+<td>Stack (evaluate expression)</td>
+<td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); for(String tok: tokens){ if(tok.equals("+")||tok.equals("-")||tok.equals("*")||tok.equals("/")){ int b=st.pop(), a=st.pop(); if(tok.equals("+")) st.push(a+b); if(tok.equals("-")) st.push(a-b); if(tok.equals("*")) st.push(a*b); if(tok.equals("/")) st.push(a/b); } else st.push(Integer.valueOf(tok)); } return st.pop();</code></td>
+
+<td>50</td>
+<td>Basic Calculator</td>
+<td><a href="https://leetcode.com/problems/basic-calculator" target="_blank">Link</a></td>
+<td>Stack (evaluate with sign and parentheses)</td>
+<td><code>Stack&lt;Integer&gt; st=new Stack&lt;&gt;(); int result=0, sign=1; for(char c: s.toCharArray()){ if(Character.isDigit(c)){ int num=c - '0'; while(i+1&lt;s.length() &amp;&amp; Character.isDigit(s.charAt(i+1))){ num = num*10 + (s.charAt(++i)-'0'); } result += sign * num; } else if(c=='+') sign=1; else if(c=='-') sign=-1; else if(c=='('){ st.push(result); st.push(sign); result=0; sign=1; } else if(c==')'){ result = result * st.pop() + st.pop(); } } return result;</code></td>
+
+<td>51</td>
+<td>Valid Anagram</td>
+<td><a href="https://leetcode.com/problems/valid-anagram" target="_blank">Link</a></td>
+<td>Sorting</td>
+<td><code>char[] a1=s.toCharArray(), a2=t.toCharArray(); Arrays.sort(a1); Arrays.sort(a2); return Arrays.equals(a1,a2);</code></td>
+
+<td>52</td>
+<td>Group Anagrams</td>
+<td><a href="https://leetcode.com/problems/group-anagrams" target="_blank">Link</a></td>
+<td>Sorting &amp; HashMap</td>
+<td><code>Map&lt;String,List&lt;String&gt;&gt; map=new HashMap&lt;&gt;(); for(String w: strs){ char[] arr=w.toCharArray(); Arrays.sort(arr); String key=new String(arr); map.computeIfAbsent(key, k-&gt;new ArrayList&lt;&gt;()).add(w); }</code></td>
+
+<td>53</td>
+<td>Two Sum</td>
+<td><a href="https://leetcode.com/problems/two-sum" target="_blank">Link</a></td>
+<td>HashMap (one-pass)</td>
+<td><code>Map&lt;Integer,Integer&gt; map=new HashMap&lt;&gt;(); for(int i=0;i&lt;nums.length;i++){ if(map.containsKey(target-nums[i])) return new int[]{map.get(target-nums[i]), i}; map.put(nums[i], i); }</code></td>
+
+<td>54</td>
+<td>Happy Number</td>
+<td><a href="https://leetcode.com/problems/happy-number" target="_blank">Link</a></td>
+<td>Cycle detection (Floyd’s)</td>
+<td><code>int slow=n, fast=n; do{ slow = squareSum(slow); fast = squareSum(squareSum(fast)); } while(slow != fast); return slow == 1;</code></td>
+
+<td>55</td>
+<td>Contains Duplicate II</td>
+<td><a href="https://leetcode.com/problems/contains-duplicate-ii" target="_blank">Link</a></td>
+<td>HashMap (track index)</td>
+<td><code>Map&lt;Integer,Integer&gt; map=new HashMap&lt;&gt;(); for(int i=0;i&lt;nums.length;i++){ if(map.containsKey(nums[i]) &amp;&amp; i - map.get(nums[i]) &lt;= k) return true; map.put(nums[i], i); } return false;</code></td>
+
+<td>56</td>
+<td>Longest Consecutive Sequence</td>
+<td><a href="https://leetcode.com/problems/longest-consecutive-sequence" target="_blank">Link</a></td>
+<td>HashSet (check start of sequence)</td>
+<td><code>Set&lt;Integer&gt; set=new HashSet&lt;&gt;(); for(int num: nums) set.add(num); int longest=0; for(int num: set){ if(!set.contains(num-1)){ int cur=num; int streak=1; while(set.contains(cur+1)){ cur++; streak++; } longest=Math.max(longest, streak); } }</code></td>
+
+<td>57</td>
+<td>Summary Ranges</td>
+<td><a href="https://leetcode.com/problems/summary-ranges" target="_blank">Link</a></td>
+<td>Iteration</td>
+<td><code>List&lt;String&gt; res=new ArrayList&lt;&gt;(); for(int i=0;i&lt;nums.length;i++){ int start=nums[i]; while(i&lt;nums.length-1 &amp;&amp; nums[i]+1==nums[i+1]) i++; if(start==nums[i]) res.add(""+start); else res.add(start+"-&gt;"+nums[i]); }</code></td>
+
+<td>58</td>
+<td>Merge Intervals</td>
+<td><a href="https://leetcode.com/problems/merge-intervals" target="_blank">Link</a></td>
+<td>Sort &amp; Merge</td>
+<td><code>Arrays.sort(intervals, (a,b)-&gt;a[0]-b[0]); List&lt;int[]&gt; merged=new ArrayList&lt;&gt;(); for(int[] interval: intervals){ if(merged.isEmpty() || merged.get(merged.size()-1)[1] &lt; interval[0]) merged.add(interval); else merged.get(merged.size()-1)[1] = Math.max(merged.get(merged.size()-1)[1], interval[1]); }</code></td>
+
+<td>59</td>
+<td>Insert Interval</td>
+<td><a href="https://leetcode.com/problems/insert-interval" target="_blank">Link</a></td>
+<td>Merge on the fly</td>
+<td><code>List&lt;int[]&gt; res=new ArrayList&lt;&gt;(); int i=0; while(i&lt;intervals.length &amp;&amp; intervals[i][1] &lt; newInt[0]) res.add(intervals[i++]); while(i&lt;intervals.length &amp;&amp; intervals[i][0] &lt;= newInt[1]){ newInt[0] = Math.min(newInt[0], intervals[i][0]); newInt[1] = Math.max(newInt[1], intervals[i][1]); i++; } res.add(newInt); while(i&lt;intervals.length) res.add(intervals[i++]);</code></td>
+
+<td>60</td>
+<td>Minimum Number of Arrows to Burst Balloons</td>
+<td><a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons" target="_blank">Link</a></td>
+<td>Greedy (sort by end)</td>
+<td><code>Arrays.sort(points, (a,b)-&gt;Integer.compare(a[1], b[1])); int arrows=1, end=points[0][1]; for(int i=1;i&lt;points.length;i++){ if(points[i][0] &gt; end){ arrows++; end = points[i][1]; } }</code></td>
+
 <!-- more to come -->
 <!-- Remaining entries are being appended in subsequent updates... -->
-    </tbody>
-  </table>
+</tbody>
+</table>
 </body>
-  </html>
+</html>
